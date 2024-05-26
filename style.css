@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'Young Serif';
+    src: url(youngserif.woff2), url(youngserif.woff);
+  }
+  
+  @font-face {
+    font-family: 'GT Walsheim Pro';
+    src: url(GTWalsheimPro-Regular.woff2), url(GTWalsheimPro-Regular.woff);
+  }
+
+  body {
+    font-family: 'GT Walsheim Pro';
+    font-size: 18px;
+    line-height: 1.25;
+    color: #000;
+
+  }
+
+  
