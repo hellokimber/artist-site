@@ -63,15 +63,14 @@
   }
   
   h1 {
+    font-family: 'Young Serif';
     font-size: 10vw;
-    font-style: italic;
-  
     animation: fadein 0.4s 1s both;
   }
   
   h2 {
     max-width: 480px;
-    font-size: 36px;
+    font-size: 28px;
     text-align: center;
   
     animation: fadein 0.4s 1.75s both;
@@ -104,9 +103,9 @@
     margin: 24px 20% 0 0;
   }
   
-  section img {
+ /*  section img {
     filter: grayscale(100%) brightness(125%) contrast(124%);
-  }
+  } */
   
   svg {
     position:  fixed;
@@ -114,7 +113,7 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    z-index: 10;
+    z-index: 0;
     mix-blend-mode: multiply;
     pointer-events: none;
   }
@@ -145,6 +144,7 @@
     bottom: 32px;
     left: 50%;
     transform: translate(-50%, 0);
+    color:#babd63;
   }
   
   

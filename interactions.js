@@ -8,19 +8,19 @@ const easing = function (x) {
 }
 
 const fadeHeader = function () {
-  const pixels = window.pageYOffset
+  const pixels = window.scrollY
   
   headerTag.style.opacity = 1 - easing(pixels / 500)
 }
 
 const fadeArrow = function () {
-  const pixels = window.pageYOffset
+  const pixels = window.scrollY
   
   arrowTag.style.opacity = 1 - easing(pixels / 250)
 }
 
 const checkBlobs = function () {
-  const pixels = window.pageYOffset
+  const pixels = window.scrollY
   
   blobGroups.forEach((blob, index) => {
     const currentSection = sectionTags[index]
