@@ -207,7 +207,6 @@
 @media only screen and (max-width: 767px) {
   body {
       font-size: 24px;
-      margin: 0;
   }
 
   header {
@@ -229,11 +228,11 @@
   }
 
   section img {
-    max-width: 200px;
+    max-width: 100%;
    } 
 
   figure {
-      max-width: 50%;
+      max-width: 100%;
   }
 
   figcaption {
