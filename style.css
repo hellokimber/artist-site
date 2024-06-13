@@ -77,7 +77,7 @@
   }
   
   header span {
-    background-color: #babd63;
+    background-color: #d3c7f3;
     width: 1em;
     height: 0.02em;
     display: inline-block;
@@ -151,17 +151,19 @@
   a {
     text-decoration: none;
     color: #171518;
-    border-bottom: 0.02em solid #babd63;
+    border-bottom: 0.1em solid #babd63;
   }
 
   a:hover {
-    border-bottom: 0.04em solid #FF9696;
+    border-bottom: 0.1em solid #ff9696b7;
+    color: #FF9696;
   }
 
   footer {
+    position: relative;
     width: 100%;
     padding: 60px;
-    z-index: 50;
+    z-index: 100;
   }
 
   footer p {
@@ -196,6 +198,7 @@
 
   footer {
       padding: 40px;
+      z-index: 50;
   }
 
   footer p {
