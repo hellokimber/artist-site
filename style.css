@@ -46,7 +46,7 @@
     margin: 100vh 0 0 0;
     
     background-color: #F2F2F2;
-    color: #000000;
+    color: #171518;
   }
   
   header {
@@ -148,6 +148,26 @@
     color:#babd63;
   }
   
+  a {
+    text-decoration: none;
+    color: #171518;
+    border-bottom: 0.02em solid #babd63;
+  }
+
+  a:hover {
+    border-bottom: 0.04em solid #FF9696;
+  }
+
+  footer {
+    width: 100%;
+    padding: 60px;
+  }
+
+  footer p {
+    font-size: 22px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
   
   
   
