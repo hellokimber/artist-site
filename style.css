@@ -6,20 +6,26 @@
   
   @font-face {
     font-family: 'GT Walsheim Pro';
-    src: url(GTWalsheimPro-Light.woff), url(GTWalsheimPro-Light.woff2);
-    font-weight: light;
+    src: 
+      url(GTWalsheimPro-Light.woff2) format('woff2'),  
+      url(GTWalsheimPro-Light.woff) format('woff');
+    font-weight: 300; /* Light */
   }
  
   @font-face {
     font-family: 'GT Walsheim Pro';
-    src: url(GTWalsheimPro-Regular.woff2), url(GTWalsheimPro-Regular.woff);
-    font-weight: regular;
+    src: 
+      url(GTWalsheimPro-Regular.woff2) format('woff2'), 
+      url(GTWalsheimPro-Regular.woff) format('woff');
+    font-weight: 400; /* regular */
   }
 
   @font-face {
     font-family: 'GT Walsheim Pro';
-    src: url(GTWalsheimPro-Bold.woff), url(GTWalsheimPro-Bold.woff2);
-    font-weight: bold;
+    src: 
+      url(GTWalsheimPro-Bold.woff2) format('woff2'),
+      url(GTWalsheimPro-Bold.woff) format('woff');
+    font-weight: 700; /* bold */
   }
   
   /* Key Frames for Animations*/
@@ -58,7 +64,7 @@
   body {
     font-family: 'GT Walsheim Pro';
     font-size: 48px;
-    font-weight: regular;
+    font-weight: 400;
     line-height: 1.25;
     margin: 100vh 0 0 0;
     
@@ -89,14 +95,15 @@
   h2 {
     max-width: 480px;
     font-size: 2vw;
+    font-weight: 400;
     text-align: center;
   
     animation: fadein 0.4s 1.75s both;
   }
 
-.body-sm-light {
-    font-weight: light;
-    font-size: 0.75em;
+  .body-sm-light {
+    font-weight: 300;
+    font-size: 0.5em;
 
   }
   
@@ -118,6 +125,10 @@
 /*   section.dark {
   
   } */
+
+  section.body-content {
+    max-width: 70%;
+  }
   
   /* Image styles */
   figure {
