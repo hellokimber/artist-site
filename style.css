@@ -72,6 +72,19 @@
     color: #171518;
   }
   
+  .body-sm-light {
+    font-weight: 300;
+    font-size: 0.5em;
+  }
+
+  .content {
+    font-size: 0.5em;
+  }
+
+  .body-content {
+    padding-left: 60px;
+  }
+
   /* Header styles*/
   header {
     position: fixed;
@@ -91,6 +104,10 @@
     font-size: 10vw;
     animation: fadein 0.4s 1s both;
   }
+
+  h1.content {
+    font-size: 2em;
+  }
   
   h2 {
     max-width: 480px;
@@ -101,11 +118,6 @@
     animation: fadein 0.4s 1.75s both;
   }
 
-  .body-sm-light {
-    font-weight: 300;
-    font-size: 0.5em;
-
-  }
   
   header span {
     background-color: #d3c7f3;
@@ -126,9 +138,10 @@
   
   } */
 
-  section.body-content {
-    max-width: 70%;
+  section.purple {
+    background-color: #d3c7f3;
   }
+  
   
   /* Image styles */
   figure {
