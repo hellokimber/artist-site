@@ -145,7 +145,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  /*background: linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.55) 100%);*/
+  background: linear-gradient(180deg, #56577744 100%);
   z-index: 1;
 }
 
@@ -175,8 +175,6 @@
   flex-direction: column;
   justify-content: flex-end;
  /* min-height: clamp(280px, 55vh, 620px);*/
- background-color: #f2f2f275;
- border-radius: .5em;
 }
 
 .promo-cover__title {
