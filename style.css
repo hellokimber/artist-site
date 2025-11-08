@@ -145,7 +145,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, #5657777a 100%);
+  background: linear-gradient(180deg, #565777a7 100%);
   z-index: 1;
 }
 
@@ -204,7 +204,7 @@
   font-weight: 600;
   padding: .65rem 2rem;
   border-radius: 999px;
-  background: #babd63;
+  background: #565777;
   color: #fff;                       /* ensures text color stays white */
   text-decoration: none;   
   backdrop-filter: blur(2px);
@@ -296,16 +296,16 @@
   }
 
   a:hover {
-    border-bottom: 0.1em solid #565777;
-    color: #565777;
+    border-bottom: 0.1em solid #F2F2F2;
+    color: #F2F2F2;
   }
 
  a.promo-cover__cta {
-    border-bottom: 0.1em solid #babd63;
+    border-bottom: 0.1em solid #d3c7f3;
   }
 
   a.promo-cover__cta:hover {
-    border-bottom: 0.1em solid #565777;
+    border-bottom: 0.1em solid #babd63;
   }
 
   /* Footer styles */
