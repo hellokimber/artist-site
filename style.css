@@ -175,6 +175,8 @@
   flex-direction: column;
   justify-content: flex-end;
  /* min-height: clamp(280px, 55vh, 620px);*/
+ background-color: #f2f2f275;
+ border-radius: .5em;
 }
 
 .promo-cover__title {
@@ -191,7 +193,7 @@
   margin: .5rem 0 .85rem 0;
   font-size: clamp(1rem, 1.6vw, 1.25rem);
   opacity: .9;
-  font-weight: bold;
+  font-weight: medium;
   color: #ffffff;
 }
 
