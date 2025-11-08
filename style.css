@@ -305,7 +305,8 @@
   }
 
   a.promo-cover__cta:hover {
-    border-bottom: 0.1em solid #babd63;
+    border-bottom: 0.1em solid #565777;
+    background-color: #babd63;
   }
 
   /* Footer styles */
