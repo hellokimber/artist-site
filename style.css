@@ -145,7 +145,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.55) 100%);
+  /*background: linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.55) 100%);*/
   z-index: 1;
 }
 
@@ -183,12 +183,16 @@
   line-height: 1.1;
   letter-spacing: 0.01em;
   text-align: left;
+  color: #ffffff;
+  font-weight: bold;
 }
 
 .promo-cover__subtitle {
   margin: .5rem 0 .85rem 0;
   font-size: clamp(1rem, 1.6vw, 1.25rem);
   opacity: .9;
+  font-weight: bold;
+  color: #ffffff;
 }
 
 .promo-cover__cta {
@@ -200,7 +204,7 @@
   font-weight: 600;
   padding: .65rem 2rem;
   border-radius: 999px;
-  background: rgba(255,255,255,.14);
+  background: #babd63;
   color: #fff;                       /* ensures text color stays white */
   text-decoration: none;   
   backdrop-filter: blur(2px);
