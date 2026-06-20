@@ -330,6 +330,11 @@ section.promo-wrapper {
     line-height: 1.5;
     margin-bottom: 10px;
   }
+
+  footer a:hover {
+    color: #6B5F8A;
+    border-bottom-color: #6B5F8A;
+  }
   
   
   
