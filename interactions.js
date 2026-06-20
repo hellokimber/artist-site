@@ -1,6 +1,6 @@
 const headerTag = document.querySelector("header")
 const blobGroups = document.querySelectorAll("g.blob")
-const sectionTags = document.querySelectorAll("section")
+const artworkSections = document.querySelectorAll("section:not(.promo-wrapper)")
 const arrowTag = document.querySelector("img.arrow")
 
 const easing = function (x) {
@@ -23,7 +23,7 @@ const checkBlobs = function () {
   const pixels = window.scrollY
   
   blobGroups.forEach((blob, index) => {
-    const currentSection = sectionTags[index]
+    const currentSection = artworkSections[index]
     
     if (pixels > currentSection.offsetTop - 300) {
       blob.classList.add("in-view")
