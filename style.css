@@ -131,11 +131,17 @@
   
   
 /* ============= Promo Cover ============= */
+section.promo-wrapper {
+  padding-block: clamp(2rem, 8vw, 200px);
+  padding-inline: 12.16%;
+}
+
 .promo-cover {
   position: relative;
   margin-inline: auto;
-  max-width: 72rem;        /* remove for full-bleed */
-  border-radius: 2rem;     /* set to 0 for full-bleed */
+  max-width: 82.37rem;
+  width: 100%;
+  border-radius: 2rem;
   overflow: hidden;
   isolation: isolate;
 }
@@ -167,14 +173,14 @@
 
 .promo-cover__content {
   position: relative;
-  padding: clamp(1rem, 3vw, 2rem);
-  padding-bottom: clamp(1.25rem, 5vw, 3rem);
-  /*max-width: 38ch;*/
+  padding: clamp(1.3rem, 3.9vw, 2.6rem);
+  padding-bottom: clamp(1.625rem, 6.5vw, 3.9rem);
+  padding-left: clamp(2.6rem, 7.8vw, 5.2rem);
   z-index: 3;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
- /* min-height: clamp(280px, 55vh, 620px);*/
+  min-height: clamp(197px, 38.61vh, 435px);
 }
 
 .promo-cover__title {
@@ -189,6 +195,7 @@
 
 .promo-cover__subtitle {
   margin: .5rem 0 .85rem 0;
+  max-width: 34ch;
   font-size: clamp(1rem, 1.6vw, 1.25rem);
   opacity: .9;
   font-weight: medium;
@@ -200,11 +207,11 @@
   display: inline-block;
   align-self: start;      
   margin-top: 1.5rem;
-  font-size: 2rem;
+  font-size: 1.3rem;
   font-weight: 600;
   padding: .65rem 2rem;
   border-radius: 999px;
-  background: #565777;
+  background: #4A4068;
   color: #fff;                       /* ensures text color stays white */
   text-decoration: none;   
   backdrop-filter: blur(2px);
@@ -304,9 +311,9 @@
     border-bottom: 0.1em solid #d3c7f3;
   }
 
-  a.promo-cover__cta:hover {
-    border-bottom: 0.1em solid #565777;
-    background-color: #babd63;
+ a.promo-cover__cta:hover {
+    border-bottom: 0.1em solid #d3c7f3;
+    background-color: #565777;
   }
 
   /* Footer styles */
@@ -342,6 +349,11 @@
 
   section {
       padding: 100px;
+  }
+
+  section.promo-wrapper {
+      padding-block: 2rem;
+      padding-inline: 12.16%;
   }
 
   figcaption {
@@ -380,6 +392,11 @@
 
   section {
       padding: 60px;
+  }
+
+  section.promo-wrapper {
+      padding-block: 1.5rem;
+      padding-inline: 12.16%;
   }
 
   section img {
