@@ -1,0 +1,128 @@
+@font-face {
+  font-family: Walsheim;
+  src: url('/assets/GTWalsheimPro-Bold.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+.homepage .site-header {
+  max-width: 1280px;
+  min-height: 110px;
+  padding: 32px 48px;
+}
+
+.homepage .wordmark { width: 106px; }
+.homepage .site-header nav { gap: 12px; }
+.homepage .site-header nav a { font-size: 16px; font-weight: 300; }
+.homepage .site-header nav a[aria-current] { text-decoration: none; }
+.homepage .site-header nav a:hover { text-decoration: underline; }
+.homepage .site-header nav a + a::before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 1px;
+  margin-right: 12px;
+  background: #8c858e;
+  vertical-align: middle;
+}
+
+.homepage .intro {
+  max-width: 1280px;
+  height: 460px;
+  min-height: 0;
+  grid-template-columns: 430px 362px;
+  grid-template-rows: minmax(0, 1fr);
+  gap: 48px;
+  align-items: start;
+  padding: 40px 144px 0;
+}
+
+.homepage .intro-copy { padding-top: 74px; }
+.homepage .intro-heading { font-size: 24px; font-weight: 700; }
+.homepage .intro-statement {
+  margin-top: 14px;
+  font-size: 24px;
+  line-height: 1.5;
+}
+.homepage .intro .button {
+  min-height: 48px;
+  margin-top: 58px;
+  padding: 8px 18px;
+  color: #91962c;
+  font-size: 18px;
+  line-height: 1.5;
+}
+.homepage .intro .button:hover { color: var(--ink); }
+.homepage .artist-photo { margin: 0; }
+
+.homepage .nature {
+  position: relative;
+  padding-block: 100px 120px;
+  background: #babc63;
+}
+.homepage .nature::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 40px;
+  height: 28px;
+  background: white;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform: translateX(-50%);
+}
+.homepage .nature .section-wrap { max-width: 1280px; padding-inline: 70px; }
+.homepage .nature .section-heading { padding-inline: 16px; }
+.homepage .nature h2 { font-size: 40px; }
+.homepage .nature .section-heading p { font-size: 16px; margin-top: 4px; }
+.homepage .triptych { gap: 58px; margin-top: 32px; }
+.homepage .triptych img {
+  aspect-ratio: 3 / 4;
+  padding: 16px;
+  object-fit: contain;
+  background: white;
+}
+.homepage .triptych figcaption { margin-top: 32px; font-size: 16px; }
+.homepage .collection-note {
+  max-width: 540px;
+  margin-top: 72px;
+  color: white;
+  font-family: YoungSerif, Georgia, serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+@media (min-width: 701px) and (max-width: 1100px) {
+  .homepage .intro {
+    grid-template-columns: minmax(0, 1fr) 36%;
+    gap: 64px;
+    height: 420px;
+    padding-inline: 11.25%;
+  }
+  .homepage .intro-copy { padding-top: 35px; }
+  .homepage .intro-heading, .homepage .intro-statement { font-size: 21px; }
+  .homepage .intro .button { margin-top: 38px; }
+  .homepage .nature .section-wrap { padding-inline: 5.5%; }
+  .homepage .triptych { gap: 4.5vw; }
+}
+
+@media (max-width: 700px) {
+  .homepage .site-header { min-height: auto; padding: 24px; gap: 20px; }
+  .homepage .site-header nav { justify-content: flex-start; gap: 10px; }
+  .homepage .site-header nav a { font-size: 14px; }
+  .homepage .site-header nav a + a::before { width: 12px; margin-right: 10px; }
+  .homepage .intro { height: auto; min-height: auto; padding: 28px 24px 0; gap: 48px; }
+  .homepage .intro-copy { padding-top: 0; }
+  .homepage .intro-heading, .homepage .intro-statement { font-size: 21px; }
+  .homepage .intro .button { margin-top: 30px; }
+  .homepage .artist-photo { width: 72%; max-width: 300px; margin-bottom: -35px; }
+  .homepage .nature { padding-block: 95px 65px; }
+  .homepage .nature .section-wrap { padding-inline: 24px; }
+  .homepage .nature .section-heading { padding-inline: 0; }
+  .homepage .nature h2 { font-size: 30px; }
+  .homepage .triptych { margin-top: 32px; gap: 40px; }
+  .homepage .triptych figcaption { margin-top: 18px; }
+  .homepage .collection-note { margin-top: 48px; font-size: 20px; }
+}
