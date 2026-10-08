@@ -131,7 +131,7 @@
   --slide-width: min(61.11vw, 880px);
   --gallery-inset: calc((100% - var(--slide-width)) / 2);
   max-width: none;
-  padding: 80px 0 28px;
+  padding: 80px 0 128px;
 }
 .homepage .sketchbooks > .section-heading {
   max-width: 1440px;
@@ -184,7 +184,7 @@
 .sketchbook-controls button:disabled { opacity: .4; cursor: default; }
 .sketchbook-controls button:focus-visible { outline: 3px solid #504078; outline-offset: 4px; }
 @media (max-width: 700px) {
-  .homepage .sketchbooks { --slide-width: 86vw; padding-top: 60px; }
+  .homepage .sketchbooks { --slide-width: 86vw; padding-top: 60px; padding-bottom: 88px; }
   .sketchbook-gallery { margin-top: 32px; }
   .sketchbook-track { gap: 16px; }
 }
