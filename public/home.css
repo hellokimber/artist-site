@@ -6,27 +6,6 @@
   font-display: swap;
 }
 
-.homepage .site-header {
-  max-width: 1280px;
-  min-height: 110px;
-  padding: 32px 48px;
-}
-
-.homepage .wordmark { width: 106px; }
-.homepage .site-header nav { gap: 12px; }
-.homepage .site-header nav a { font-size: 16px; font-weight: 300; }
-.homepage .site-header nav a[aria-current] { text-decoration: none; }
-.homepage .site-header nav a:hover { text-decoration: underline; }
-.homepage .site-header nav a + a::before {
-  content: '';
-  display: inline-block;
-  width: 18px;
-  height: 1px;
-  margin-right: 12px;
-  background: #8c858e;
-  vertical-align: middle;
-}
-
 .homepage .intro {
   max-width: 1280px;
   height: 460px;
@@ -109,10 +88,7 @@
 }
 
 @media (max-width: 700px) {
-  .homepage .site-header { min-height: auto; padding: 24px; gap: 20px; }
-  .homepage .site-header nav { justify-content: flex-start; gap: 10px; }
-  .homepage .site-header nav a { font-size: 14px; }
-  .homepage .site-header nav a + a::before { width: 12px; margin-right: 10px; }
+
   .homepage .intro { height: auto; min-height: auto; padding: 28px 24px 0; gap: 48px; }
   .homepage .intro-copy { padding-top: 0; }
   .homepage .intro-heading, .homepage .intro-statement { font-size: 21px; }
