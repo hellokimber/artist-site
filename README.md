@@ -23,3 +23,7 @@ Edit the static HTML files directly. Update visible content and JSON-LD together
 ## Validation
 
 Run `python3 scripts/check_site.py` to validate local links, image dimensions, page metadata, JSON-LD references, sitemap URLs, and semantic structure. This is a structural check, not a substitute for browser or deployed Netlify testing.
+
+## Newsletter integration
+
+The homepage newsletter section is styled and responsive. Its submit button is disabled pending confirmation of the newsletter service and signup endpoint. Connect the service, enable submission, and verify success and error handling before publishing.
