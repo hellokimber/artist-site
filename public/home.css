@@ -183,16 +183,8 @@
 .sketchbook-controls button:hover { background: rgb(40 35 30 / 85%); }
 .sketchbook-controls button:disabled { opacity: .4; cursor: default; }
 .sketchbook-controls button:focus-visible { outline: 3px solid #504078; outline-offset: 4px; }
-.homepage .sketchbooks::after {
-  content: '';
-  display: block;
-  max-width: 1248px;
-  margin: 98px max(var(--space), calc((100% - 1248px) / 2)) 0;
-  border-bottom: 2px solid var(--olive);
-}
 @media (max-width: 700px) {
   .homepage .sketchbooks { --slide-width: 86vw; padding-top: 60px; }
   .sketchbook-gallery { margin-top: 32px; }
   .sketchbook-track { gap: 16px; }
-  .homepage .sketchbooks::after { margin-top: 60px; }
 }
