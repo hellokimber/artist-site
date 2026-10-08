@@ -126,3 +126,71 @@
   .homepage .triptych figcaption { margin-top: 18px; }
   .homepage .collection-note { margin-top: 48px; font-size: 20px; }
 }
+
+.homepage .sketchbooks {
+  --slide-width: min(61.11vw, 880px);
+  --gallery-inset: calc((100% - var(--slide-width)) / 2);
+  max-width: none;
+  padding: 80px 0 28px;
+}
+.homepage .sketchbooks > .section-heading {
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: var(--space);
+}
+.homepage .sketchbooks .section-heading p { font-size: 16px; }
+.sketchbook-gallery { position: relative; margin-top: 44px; }
+.sketchbook-track {
+  position: relative;
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding-inline: var(--gallery-inset);
+  scroll-padding-inline: var(--gallery-inset);
+}
+.sketchbook-track::-webkit-scrollbar { display: none; }
+.sketchbook-track:focus-visible { outline: 2px solid #504078; outline-offset: 6px; }
+.sketchbook-track figure { flex: 0 0 var(--slide-width); scroll-snap-align: start; }
+.sketchbook-track img { aspect-ratio: 660 / 484; object-fit: cover; }
+.sketchbook-controls {
+  position: absolute;
+  inset: 0 var(--gallery-inset);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 8px;
+  pointer-events: none;
+}
+.sketchbook-controls[hidden] { display: none; }
+.sketchbook-controls button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: rgb(70 63 53 / 55%);
+  color: white;
+  font: 38px/1 Arial, sans-serif;
+  cursor: pointer;
+  pointer-events: auto;
+}
+.sketchbook-controls button:hover { background: rgb(40 35 30 / 85%); }
+.sketchbook-controls button:disabled { opacity: .4; cursor: default; }
+.sketchbook-controls button:focus-visible { outline: 3px solid #504078; outline-offset: 4px; }
+.homepage .sketchbooks::after {
+  content: '';
+  display: block;
+  max-width: 1248px;
+  margin: 98px max(var(--space), calc((100% - 1248px) / 2)) 0;
+  border-bottom: 2px solid var(--olive);
+}
+@media (max-width: 700px) {
+  .homepage .sketchbooks { --slide-width: 86vw; padding-top: 60px; }
+  .sketchbook-gallery { margin-top: 32px; }
+  .sketchbook-track { gap: 16px; }
+  .homepage .sketchbooks::after { margin-top: 60px; }
+}

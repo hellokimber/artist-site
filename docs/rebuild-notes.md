@@ -47,3 +47,10 @@ This copy was prepared in the chat workspace because access to write the origina
 - Reviewed homepage, biography, and contact layouts in the in-app browser at desktop (1440 × 1000) and mobile (390 × 844) widths. Checked homepage image loading and horizontal overflow on mobile pages.
 - Confirmed the first native FAQ disclosure opens with a click and closes with Enter.
 - This is an initial browser review, not a comprehensive accessibility, cross-browser, or production deployment audit. Existing content and image-resolution review items above still apply.
+
+## Sketchbook gallery update
+
+- Replaced the three-column sketchbook layout with a horizontal, scroll-snapping gallery based on the supplied reference. All spreads remain in the HTML and can be scrolled without JavaScript.
+- Added local JavaScript for previous/next buttons, disabled end states, resize handling, and reduced-motion support. Netlify permits same-origin scripts for these controls.
+- Checked the layout at 1080px desktop and 390px mobile widths, arrow navigation, keyboard button activation, and absence of page-level horizontal overflow.
+- Existing source images are capped at 512px wide and look soft in the enlarged desktop gallery. Higher-resolution originals are needed for sharper rendering.
