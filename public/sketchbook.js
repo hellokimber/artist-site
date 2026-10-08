@@ -6,6 +6,14 @@ if (gallery) {
   const buttons = [...controls.querySelectorAll('button')];
   const slides = [...track.querySelectorAll('figure')];
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const status = document.createElement('p');
+  status.className = 'sr-only';
+  status.setAttribute('aria-live', 'polite');
+  status.setAttribute('aria-atomic', 'true');
+  gallery.append(status);
+
+  let animationFrame = null;
+  let targetIndex = null;
 
   function slidePosition(slide) {
     return slide.offsetLeft - parseFloat(getComputedStyle(track).paddingLeft);
@@ -17,24 +25,95 @@ if (gallery) {
       Math.abs(slidePosition(slides[closest]) - track.scrollLeft) ? index : closest, 0);
   }
 
-  function updateButtons() {
-    buttons[0].disabled = track.scrollLeft <= 1;
-    buttons[1].disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 1;
+  function updateControls() {
+    const index = targetIndex ?? currentIndex();
+    buttons[0].disabled = index === 0;
+    buttons[1].disabled = index === slides.length - 1;
+  }
+
+  function announceSlide() {
+    const index = currentIndex();
+    status.textContent = `Spread ${index + 1} of ${slides.length}: ${slides[index].querySelector('figcaption').textContent}`;
+  }
+
+  function cancelAnimation() {
+    if (animationFrame !== null) cancelAnimationFrame(animationFrame);
+    animationFrame = null;
+    targetIndex = null;
+    track.classList.remove('is-animating');
+    updateControls();
+  }
+
+  function goToSlide(index) {
+    cancelAnimation();
+    targetIndex = Math.max(0, Math.min(slides.length - 1, index));
+    const start = track.scrollLeft;
+    const destination = slidePosition(slides[targetIndex]);
+    updateControls();
+
+    if (reducedMotion.matches || Math.abs(destination - start) < 1) {
+      track.scrollTo({ left: destination, behavior: 'instant' });
+      targetIndex = null;
+      updateControls();
+      announceSlide();
+      return;
+    }
+
+    // Temporarily release scroll snapping so it does not fight the easing curve.
+    track.classList.add('is-animating');
+    let startTime;
+    function animate(time) {
+      startTime ??= time;
+      const progress = Math.min((time - startTime) / 480, 1);
+      const eased = progress * progress * (3 - 2 * progress);
+      track.scrollTo({ left: start + (destination - start) * eased, behavior: 'instant' });
+      if (progress < 1) {
+        animationFrame = requestAnimationFrame(animate);
+      } else {
+        cancelAnimation();
+        announceSlide();
+      }
+    }
+    animationFrame = requestAnimationFrame(animate);
   }
 
   for (const button of buttons) {
     button.addEventListener('click', () => {
-      const index = Math.max(0, Math.min(slides.length - 1,
-        currentIndex() + Number(button.dataset.direction)));
-      track.scrollTo({
-        left: slidePosition(slides[index]),
-        behavior: reducedMotion.matches ? 'instant' : 'smooth',
-      });
+      goToSlide((targetIndex ?? currentIndex()) + Number(button.dataset.direction));
     });
   }
 
-  track.addEventListener('scroll', updateButtons, { passive: true });
-  new ResizeObserver(updateButtons).observe(track);
+  gallery.addEventListener('keydown', (event) => {
+    if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+    const index = targetIndex ?? currentIndex();
+    const destinations = {
+      ArrowLeft: index - 1,
+      ArrowRight: index + 1,
+      Home: 0,
+      End: slides.length - 1,
+    };
+    if (!(event.key in destinations)) return;
+    event.preventDefault();
+    goToSlide(destinations[event.key]);
+  });
+
+  // Direct touch, trackpad, or mouse interaction takes over immediately.
+  track.addEventListener('pointerdown', cancelAnimation, { passive: true });
+  track.addEventListener('wheel', cancelAnimation, { passive: true });
+  track.addEventListener('scroll', updateControls, { passive: true });
+  track.addEventListener('scrollend', () => {
+    if (targetIndex === null) announceSlide();
+  });
+  reducedMotion.addEventListener('change', () => {
+    if (targetIndex !== null) goToSlide(targetIndex);
+  });
+  new ResizeObserver(() => {
+    const index = targetIndex ?? currentIndex();
+    cancelAnimation();
+    track.scrollTo({ left: slidePosition(slides[index]), behavior: 'instant' });
+    updateControls();
+  }).observe(track);
+
   controls.hidden = false;
-  updateButtons();
+  updateControls();
 }

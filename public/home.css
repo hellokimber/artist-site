@@ -152,6 +152,7 @@
   scroll-padding-inline: var(--gallery-inset);
 }
 .sketchbook-track::-webkit-scrollbar { display: none; }
+.sketchbook-track.is-animating { scroll-snap-type: none; }
 .sketchbook-track:focus-visible { outline: 2px solid #504078; outline-offset: 6px; }
 .sketchbook-track figure { flex: 0 0 var(--slide-width); scroll-snap-align: start; }
 .sketchbook-track img { aspect-ratio: 660 / 484; object-fit: cover; }
