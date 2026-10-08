@@ -14,6 +14,7 @@ if (gallery) {
 
   let animationFrame = null;
   let targetIndex = null;
+  let swipeTimeout;
 
   function slidePosition(slide) {
     return slide.offsetLeft - parseFloat(getComputedStyle(track).paddingLeft);
@@ -45,6 +46,7 @@ if (gallery) {
   }
 
   function goToSlide(index) {
+    clearTimeout(swipeTimeout);
     cancelAnimation();
     targetIndex = Math.max(0, Math.min(slides.length - 1, index));
     const start = track.scrollLeft;
@@ -52,6 +54,7 @@ if (gallery) {
     updateControls();
 
     if (reducedMotion.matches || Math.abs(destination - start) < 1) {
+      track.classList.remove('is-swiping');
       track.scrollTo({ left: destination, behavior: 'instant' });
       targetIndex = null;
       updateControls();
@@ -61,6 +64,7 @@ if (gallery) {
 
     // Temporarily release scroll snapping so it does not fight the easing curve.
     track.classList.add('is-animating');
+    track.classList.remove('is-swiping');
     let startTime;
     function animate(time) {
       startTime ??= time;
@@ -99,10 +103,23 @@ if (gallery) {
 
   // Direct touch, trackpad, or mouse interaction takes over immediately.
   track.addEventListener('pointerdown', cancelAnimation, { passive: true });
-  track.addEventListener('wheel', cancelAnimation, { passive: true });
+  track.addEventListener('wheel', (event) => {
+    // Keep vertical gestures available for page scrolling.
+    const horizontal = Math.abs(event.deltaX) > Math.abs(event.deltaY);
+    if (event.ctrlKey || (!horizontal && !event.shiftKey)) return;
+    if (!event.cancelable) return;
+    event.preventDefault();
+    track.classList.add('is-swiping');
+    cancelAnimation();
+    clearTimeout(swipeTimeout);
+    const unit = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? track.clientWidth : 1;
+    const delta = horizontal ? event.deltaX : event.deltaY;
+    track.scrollBy({ left: delta * unit, behavior: 'instant' });
+    swipeTimeout = setTimeout(() => goToSlide(currentIndex()), 160);
+  }, { passive: false });
   track.addEventListener('scroll', updateControls, { passive: true });
   track.addEventListener('scrollend', () => {
-    if (targetIndex === null) announceSlide();
+    if (targetIndex === null && !track.classList.contains('is-swiping')) announceSlide();
   });
   reducedMotion.addEventListener('change', () => {
     if (targetIndex !== null) goToSlide(targetIndex);
