@@ -13,3 +13,5 @@
 @media(prefers-reduced-motion:no-preference){a{transition:background-color .18s ease,color .18s ease}}
 
 .site-footer .social a{text-decoration:none}
+
+.site-footer .social a:hover{text-decoration:underline}
