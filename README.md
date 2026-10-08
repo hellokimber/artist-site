@@ -1,6 +1,6 @@
 # Kimberillo
 
-Static portfolio for Kimber Helm / Kim van der Helm. HTML, CSS, local fonts, and responsive WebP images. No application runtime, build dependencies, or build command. A small local script enhances the sketchbook gallery with arrow controls; native horizontal scrolling works without JavaScript.
+Static portfolio for Kimber Helm. HTML, CSS, local fonts, and responsive WebP images. No application runtime, build dependencies, or build command. A small local script enhances the sketchbook gallery with arrow controls; native horizontal scrolling works without JavaScript.
 
 ## Preview
 
