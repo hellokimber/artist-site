@@ -111,7 +111,7 @@ for path, doc in pages.items():
                     check(resolve(node['image']).is_file(), f'{label}: missing artwork image')
         except (ValueError, KeyError, TypeError) as error:
             errors.append(f'{label}: invalid JSON-LD: {error}')
-    check(not [a for a in doc.select('script') if a.get('type') != 'application/ld+json' and a.get('src') != '/sketchbook.js'], f'{label}: unexpected executable script')
+    check(not [a for a in doc.select('script') if a.get('type') != 'application/ld+json' and a.get('src') not in ('/sketchbook.js', '/newsletter.js')], f'{label}: unexpected executable script')
 
 sitemap = ElementTree.parse(ROOT / 'sitemap.xml')
 ns = {'s': 'http://www.sitemaps.org/schemas/sitemap/0.9'}

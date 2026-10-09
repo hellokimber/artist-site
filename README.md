@@ -26,4 +26,6 @@ Run `python3 scripts/check_site.py` to validate local links, image dimensions, p
 
 ## Newsletter integration
 
-The homepage newsletter section is styled and responsive. Its submit button is disabled pending confirmation of the newsletter service and signup endpoint. Connect the service, enable submission, and verify success and error handling before publishing.
+The homepage newsletter submits directly to Kit form 10021383 using its public signup endpoint. Local JavaScript provides inline confirmation and error feedback; without JavaScript, the form posts directly to Kit. The Netlify security policy permits this endpoint. No API key is needed. Success asks subscribers to check their inbox for confirmation. A real signup and confirmation email still need verification after deployment.
+
+Run `node scripts/check_newsletter.cjs` to check newsletter response handling with simulated Kit responses. These checks never send a signup to Kit.

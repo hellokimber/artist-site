@@ -151,6 +151,8 @@
   cursor: pointer;
 }
 .newsletter-form button:hover { background: #aeb14f; }
+.newsletter-form button:disabled { cursor: default; opacity: .7; }
+.newsletter-status:not(:empty) { margin-top: 20px; font-size: 16px; }
 .newsletter-form input:focus-visible,
 .newsletter-form button:focus-visible { outline: 3px solid #504078; outline-offset: 5px; }
 @media (max-width: 900px) {
