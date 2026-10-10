@@ -1,0 +1,75 @@
+.biography { padding-bottom: 90px; }
+
+.statement {
+  max-width: none;
+  margin: 0;
+  padding: 104px 0 54px;
+  border: 0;
+  background: var(--lavender);
+}
+
+.statement-layout {
+  max-width: 1100px;
+  margin-inline: auto;
+}
+
+.statement h2 {
+  margin-bottom: 34px;
+  font-size: 40px;
+}
+
+.statement-copy {
+  max-width: 650px;
+  margin-left: 64px;
+  font-size: 22px;
+  line-height: 1.64;
+}
+
+.statement-copy p + p { margin-top: 26px; }
+.statement-copy q { quotes: '“' '”' '‘' '’'; }
+.statement-copy sup { font-size: 12px; line-height: 0; }
+.statement-copy sup a { text-decoration: none; }
+
+.statement-source {
+  margin: 110px 0 0 64px;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+
+.artist-quote {
+  padding: 130px 24px;
+  background: white;
+  color: var(--coral);
+  text-align: center;
+  font-family: YoungSerif, Georgia, serif;
+}
+
+.artist-quote figure { max-width: 1200px; margin-inline: auto; }
+.artist-quote blockquote { margin: 0; }
+.artist-quote blockquote p { font-size: clamp(32px, 5.5vw, 78px); line-height: 1.3; }
+.artist-quote figcaption { margin-top: 28px; font-size: clamp(18px, 2vw, 28px); }
+.artist-quote figcaption::before,
+.artist-quote figcaption::after {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  margin-inline: 10px;
+  background: currentColor;
+  vertical-align: middle;
+}
+
+@media (max-width: 1250px) {
+  .statement-layout { padding-inline: var(--space); }
+}
+
+@media (max-width: 700px) {
+  .biography { padding-bottom: 60px; }
+  .statement { padding-block: 55px 50px; }
+  .statement h2 { font-size: 30px; margin-bottom: 28px; }
+  .statement-copy { margin-left: 0; font-size: 18px; line-height: 1.65; }
+  .statement-source { margin: 55px 0 0; font-size: 13px; }
+  .artist-quote { padding-block: 75px; }
+}

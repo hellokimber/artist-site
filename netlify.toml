@@ -1,0 +1,34 @@
+[build]
+  publish = "public"
+
+[[redirects]]
+  from = "/about.html"
+  to = "/bio/"
+  status = 301
+
+[[redirects]]
+  from = "/about"
+  to = "/bio/"
+  status = 301
+
+[[redirects]]
+  from = "/bio.html"
+  to = "/bio/"
+  status = 301
+
+[[redirects]]
+  from = "/contact.html"
+  to = "/contact/"
+  status = 301
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "default-src 'self'; img-src 'self'; font-src 'self'; style-src 'self'; script-src 'self'; connect-src 'self' https://app.kit.com; form-action 'self' https://app.kit.com; object-src 'none'; base-uri 'none'; frame-ancestors 'none'"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"

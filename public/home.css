@@ -1,0 +1,233 @@
+@font-face {
+  font-family: Walsheim;
+  src: url('/assets/GTWalsheimPro-Bold.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+.homepage .intro {
+  max-width: 1280px;
+  height: 460px;
+  min-height: 0;
+  grid-template-columns: 430px 362px;
+  grid-template-rows: minmax(0, 1fr);
+  gap: 48px;
+  align-items: start;
+  padding: 40px 144px 0;
+}
+
+.homepage .intro-copy { padding-top: 74px; }
+.homepage .intro-heading { font-size: 24px; font-weight: 700; }
+.homepage .intro-statement {
+  margin-top: 14px;
+  font-size: 24px;
+  line-height: 1.5;
+}
+.homepage .intro .button {
+  min-height: 48px;
+  margin-top: 58px;
+  padding: 8px 18px;
+  color: #91962c;
+  font-size: 18px;
+  line-height: 1.5;
+}
+.homepage .intro .button:hover { color: var(--ink); }
+.homepage .artist-photo { margin: 0; }
+
+.homepage .nature {
+  position: relative;
+  padding-block: 100px 120px;
+  background: #babc63;
+}
+.homepage .nature::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 40px;
+  height: 28px;
+  background: white;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform: translateX(-50%);
+}
+.homepage .nature .section-wrap { max-width: 1280px; padding-inline: 70px; }
+.homepage .nature .section-heading { padding-inline: 16px; }
+.homepage .nature h2 { font-size: 40px; }
+.homepage .nature .section-heading p { font-size: 16px; margin-top: 4px; }
+.homepage .triptych { gap: 58px; margin-top: 32px; }
+.homepage .triptych img {
+  aspect-ratio: 3 / 4;
+  padding: 16px;
+  object-fit: contain;
+  background: white;
+}
+.homepage .triptych figcaption { margin-top: 32px; font-size: 16px; }
+.homepage .collection-note {
+  max-width: 540px;
+  margin-top: 72px;
+  color: white;
+  font-family: YoungSerif, Georgia, serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+@media (min-width: 701px) and (max-width: 1100px) {
+  .homepage .intro {
+    grid-template-columns: minmax(0, 1fr) 36%;
+    gap: 64px;
+    height: 420px;
+    padding-inline: 11.25%;
+  }
+  .homepage .intro-copy { padding-top: 35px; }
+  .homepage .intro-heading, .homepage .intro-statement { font-size: 21px; }
+  .homepage .intro .button { margin-top: 38px; }
+  .homepage .nature .section-wrap { padding-inline: 5.5%; }
+  .homepage .triptych { gap: 4.5vw; }
+}
+
+@media (max-width: 700px) {
+
+  .homepage .intro { height: auto; min-height: auto; padding: 28px 24px 0; gap: 48px; }
+  .homepage .intro-copy { padding-top: 0; }
+  .homepage .intro-heading, .homepage .intro-statement { font-size: 21px; }
+  .homepage .intro .button { margin-top: 30px; }
+  .homepage .artist-photo { width: 72%; max-width: 300px; margin-bottom: -35px; }
+  .homepage .nature { padding-block: 95px 65px; }
+  .homepage .nature .section-wrap { padding-inline: 24px; }
+  .homepage .nature .section-heading { padding-inline: 0; }
+  .homepage .nature h2 { font-size: 30px; }
+  .homepage .triptych { margin-top: 32px; gap: 40px; }
+  .homepage .triptych figcaption { margin-top: 18px; }
+  .homepage .collection-note { margin-top: 48px; font-size: 20px; }
+}
+
+.homepage .sketchbooks {
+  --slide-width: min(61.11vw, 880px);
+  --gallery-inset: calc((100% - var(--slide-width)) / 2);
+  max-width: none;
+  padding: 80px 0 128px;
+}
+
+.newsletter { background: var(--lavender); padding-block: 90px 100px; }
+.newsletter-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.newsletter-heading h2 {
+  max-width: 540px;
+  font-size: clamp(28px, 2.5vw, 36px);
+  font-weight: 700;
+}
+.newsletter-subheading {
+  max-width: 480px;
+  margin-top: 20px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.newsletter-content > p { max-width: 550px; font-size: 18px; line-height: 1.4; }
+.newsletter-content { align-self: center; }
+.newsletter-form { display: flex; align-items: end; gap: 20px; margin-top: 0; }
+.newsletter-field { flex: 1; min-width: 0; }
+.newsletter-field label { display: block; margin-bottom: 8px; font-size: 16px; }
+.newsletter-field input {
+  display: block;
+  width: 100%;
+  height: 56px;
+  border: 2px solid #000;
+  border-radius: 0;
+  padding: 10px 12px;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+}
+.newsletter-form button {
+  height: 56px;
+  padding: 14px 26px;
+  border: 2px solid #000;
+  border-radius: 0;
+  background: #000;
+  color: #fff;
+  font: inherit;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.newsletter-form button:hover { background: #292929; }
+.newsletter-form button:disabled { cursor: default; opacity: .7; }
+.newsletter-status:not(:empty) { margin-top: 20px; font-size: 16px; }
+.newsletter-form input:focus-visible,
+.newsletter-form button:focus-visible { outline: 3px solid #504078; outline-offset: 5px; }
+@media (max-width: 900px) {
+  .newsletter-layout { gap: 40px; }
+  .newsletter-form { flex-wrap: wrap; }
+  .newsletter-field { flex-basis: 100%; }
+}
+@media (max-width: 700px) {
+  .newsletter { padding-block: 55px 60px; }
+  .newsletter-layout { grid-template-columns: 1fr; gap: 30px; }
+  .newsletter-content > p, .newsletter-subheading { font-size: 17px; }
+  .newsletter-form { margin-top: 0; }
+  .newsletter-form button { width: 100%; }
+}
+.homepage .sketchbooks > .section-heading {
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: var(--space);
+}
+.homepage .sketchbooks .section-heading p { font-size: 16px; }
+.sketchbook-gallery { position: relative; margin-top: 44px; }
+.sketchbook-track {
+  position: relative;
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding-inline: var(--gallery-inset);
+  scroll-padding-inline: var(--gallery-inset);
+}
+.sketchbook-track::-webkit-scrollbar { display: none; }
+.sketchbook-track.is-animating,
+.sketchbook-track.is-swiping { scroll-snap-type: none; }
+.sketchbook-track:focus-visible { outline: 2px solid #504078; outline-offset: 6px; }
+.sketchbook-track figure { flex: 0 0 var(--slide-width); scroll-snap-align: start; }
+.sketchbook-track img { aspect-ratio: 660 / 484; object-fit: cover; }
+.sketchbook-controls {
+  position: absolute;
+  inset: 0 var(--gallery-inset);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 8px;
+  pointer-events: none;
+}
+.sketchbook-controls[hidden] { display: none; }
+.sketchbook-controls button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: rgb(70 63 53 / 55%);
+  color: white;
+  font: 38px/1 Arial, sans-serif;
+  cursor: pointer;
+  pointer-events: auto;
+}
+.sketchbook-controls button:hover { background: rgb(40 35 30 / 85%); }
+.sketchbook-controls button:disabled { opacity: .4; cursor: default; }
+.sketchbook-controls button:focus-visible { outline: 3px solid #504078; outline-offset: 4px; }
+@media (max-width: 700px) {
+  .homepage .sketchbooks { --slide-width: 86vw; padding-top: 60px; padding-bottom: 88px; }
+  .sketchbook-gallery { margin-top: 32px; }
+  .sketchbook-track { gap: 16px; }
+}
